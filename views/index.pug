@@ -3,7 +3,7 @@ extends layout
 
 block content
   h1 Hello MVC
-  p Ingresá el ID del usuario que querés buscar.
+  p Ingresá el ID del usuario que desea buscar en la base de datos.
   form.form-inline(action='/search' method='get')
     div.form-group.mr-sm-3
       input.form-control(type='text' name='id' placeholder='ID')
@@ -26,7 +26,7 @@ block content
             td= user.birthday.toLocaleDateString('es-AR')
             td= user.age
   else
-    h3 No hay resultados      
+    h3 No se encontraron resultados en la base de datos      
   hr
   h4 Más info en 
     a(href='https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website') MDN  
