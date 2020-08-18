@@ -2,12 +2,12 @@ const express  = require('express');
 const mongoose = require('mongoose');
 
 // puerto y base de datos
-const port = process.env.PORT;
-const db   = process.env.MONGODB_URI;
+const port = process.env.PORT        || 3000;
+const db   = process.env.MONGODB_URI || 'mongodb+srv://hellodb:hellodb@cluster0.xbhvq.gcp.mongodb.net/hellodb?retryWrites=true&w=majority';
 
 const app = express();
 
-
+// set views
 app.set('view engine', 'pug');
 app.set('views', './views');
 
@@ -25,7 +25,7 @@ mongoose
   })
 .catch(err => console.error(`Error de conexion: ${err}`));
 
-
+// listen
 app.listen(port, () => {
   console.log(`Servidor alojado en el puerto: ${port}`);
 });
